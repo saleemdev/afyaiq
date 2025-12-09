@@ -1,0 +1,49 @@
+.dashboard-container {
+    padding-bottom: 24px;
+}
+
+.dashboard-title {
+    margin-bottom: 24px !important;
+    font-weight: 700 !important;
+    color: var(--text-color) !important;
+}
+
+.stat-card {
+    border: 1px solid var(--card-border) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s !important;
+    background: var(--card-bg) !important;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md) !important;
+}
+
+.stat-card .ant-statistic-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.stat-card .ant-statistic-content-value {
+    font-weight: 700;
+    font-size: 28px !important;
+    color: var(--text-color) !important;
+}
+
+.health-card {
+    background: linear-gradient(135deg, var(--card-bg), var(--bg-color)) !important;
+}
+
+.routes-card {
+    background: linear-gradient(135deg, var(--card-bg), var(--bg-color)) !important;
+}
+
+/* Dark mode specific adjustments for gradients if needed */
+[data-theme='dark'] .health-card,
+[data-theme='dark'] .routes-card {
+    background: var(--card-bg) !important;
+}

@@ -1,0 +1,85 @@
+.environment-switcher {
+    display: inline-flex;
+    align-items: center;
+}
+
+.env-segmented {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+}
+
+.env-segmented .ant-segmented-item {
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    padding: 6px 16px !important;
+}
+
+.env-segmented .ant-segmented-item-selected {
+    background: var(--primary-color) !important;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+}
+
+.env-segmented .ant-segmented-item-selected .env-option {
+    color: #fff !important;
+}
+
+.env-segmented .ant-segmented-item-selected .env-option .env-label {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.env-segmented .ant-segmented-item-selected .env-option span[style*="color"] {
+    color: #fff !important;
+}
+
+.env-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.env-label {
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .env-segmented {
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+}
+
+[data-theme='dark'] .env-segmented .ant-segmented-item:not(.ant-segmented-item-selected) {
+    color: var(--text-color) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+    .env-option {
+        gap: 4px;
+    }
+
+    .env-label {
+        font-size: 12px;
+    }
+
+    .env-segmented .ant-segmented-item {
+        padding: 4px 12px !important;
+    }
+
+    /* Hide badge count on very small screens */
+    .env-option .ant-badge {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .env-segmented .ant-segmented-item {
+        padding: 5px 14px !important;
+    }
+}

@@ -1,0 +1,288 @@
+:root {
+    /* Light Theme Colors (Default) */
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --text-secondary: #64748b;
+
+    --sidebar-bg: #0f172a;
+    --sidebar-text: #e2e8f0;
+    --sidebar-active-bg: rgba(255, 255, 255, 0.1);
+
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --header-border: rgba(226, 232, 240, 0.6);
+    --header-text: #1e293b;
+
+    --glass-blur: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition-speed: 0.3s;
+
+    --card-bg: #ffffff;
+    --card-border: transparent;
+    --hover-bg: rgba(0, 0, 0, 0.03);
+}
+
+/* Dark Theme Overrides */
+[data-theme='dark'] {
+    --bg-color: #0f172a;
+    /* Slate 900 - Deep Blue/Grey */
+    --text-color: #f1f5f9;
+    /* Slate 100 */
+    --text-secondary: #94a3b8;
+    /* Slate 400 */
+
+    --sidebar-bg: #020617;
+    /* Slate 950 - Darker than main bg */
+
+    --header-bg: rgba(15, 23, 42, 0.8);
+    --header-border: rgba(51, 65, 85, 0.4);
+    --header-text: #f1f5f9;
+
+    --card-bg: #1e293b;
+    /* Slate 800 */
+    --card-border: #334155;
+    /* Slate 700 */
+    --hover-bg: rgba(255, 255, 255, 0.05);
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Layout */
+.main-layout {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.main-layout-content {
+    transition: margin-left var(--transition-speed) ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+/* Sidebar */
+.desktop-sidebar {
+    background: var(--sidebar-bg) !important;
+    box-shadow: var(--shadow-md);
+    z-index: 50;
+    border-right: 1px solid var(--header-border);
+}
+
+.desktop-sidebar .ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-logo h2 {
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sidebar-menu {
+    border-right: 0 !important;
+    background: transparent !important;
+}
+
+.sidebar-menu .ant-menu-item {
+    margin: 4px 8px !important;
+    width: calc(100% - 16px) !important;
+    border-radius: 6px;
+    color: var(--sidebar-text) !important;
+}
+
+.sidebar-menu .ant-menu-item-selected {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.sidebar-menu .ant-menu-item:hover:not(.ant-menu-item-selected) {
+    background-color: var(--sidebar-active-bg) !important;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s;
+}
+
+.sidebar-toggle:hover {
+    color: #fff;
+}
+
+/* Mobile Drawer */
+.mobile-drawer .ant-drawer-body {
+    padding: 0;
+    background: var(--sidebar-bg);
+}
+
+/* Header */
+.app-header {
+    padding: 0;
+    background: var(--header-bg) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--header-border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 24px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+}
+
+.user-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 30px;
+    transition: background 0.3s;
+    border: 1px solid transparent;
+}
+
+.user-dropdown:hover {
+    background: var(--hover-bg);
+    border-color: var(--header-border);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--header-text);
+}
+
+.user-role {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* Responsive Utilities */
+@media (max-width: 767px) {
+    .desktop-sidebar {
+        display: none !important;
+    }
+
+    .main-layout-content {
+        margin-left: 0 !important;
+    }
+
+    .main-content {
+        margin: 16px !important;
+        padding: 16px !important;
+    }
+
+    .mobile-menu-button {
+        display: inline-flex !important;
+        margin-right: 12px;
+    }
+
+    .header-breadcrumb,
+    .button-text,
+    .user-info {
+        display: none !important;
+    }
+
+    .header-left,
+    .header-right {
+        padding: 0 16px;
+    }
+
+    .new-route-button {
+        padding: 4px 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-drawer {
+        display: none !important;
+    }
+
+    .mobile-menu-button {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .main-layout-content {
+        margin-left: 80px !important;
+    }
+
+    .main-content {
+        margin: 20px !important;
+        padding: 20px !important;
+    }
+
+    .user-info {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-layout-content.collapsed {
+        margin-left: 80px !important;
+    }
+
+    .main-layout-content.expanded {
+        margin-left: 240px !important;
+    }
+
+    .main-content {
+        margin: 24px !important;
+        padding: 24px !important;
+    }
+}

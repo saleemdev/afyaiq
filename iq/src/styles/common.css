@@ -1,0 +1,28 @@
+/* Minimal Ant Design common style overrides */
+
+:root {
+    --border-radius: 6px;
+}
+
+/* Primary button */
+.ant-btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+/* Card */
+.ant-card {
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Input */
+.ant-input {
+    border-radius: var(--border-radius) !important;
+}
+
+/* Table */
+.ant-table {
+    border-radius: var(--border-radius) !important;
+}

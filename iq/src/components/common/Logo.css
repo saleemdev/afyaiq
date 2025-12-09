@@ -1,0 +1,17 @@
+.app-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-image {
+    width: 24px;
+    height: 24px;
+}
+
+.logo-text {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--header-text);
+}
